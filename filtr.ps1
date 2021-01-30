@@ -1,11 +1,3 @@
-Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
-Write-Output "Disabling telemetry via Group Policies"
-New-FolderForced -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" "AllowTelemetry" 0
-
-# Entries related to Akamai have been reported to cause issues with Widevine
-# DRM.
-
 Write-Output "Adding telemetry domains to hosts file"
 $hosts_file = "$env:systemroot\System32\drivers\etc\hosts"
 $domains = @(
