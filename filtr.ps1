@@ -208,7 +208,7 @@ $domains = @(
     "pubads.g.doubleclick.net"
     "redirector.gvt1.com"
     "securepubads.g.doubleclick.net"
-    "spclient.wg.spotify.com"     #clear
+    #"spclient.wg.spotify.com"   #Crash Spotify
     "tpc.googlesyndication.com"
     "v.jwpcdn.com"
     "video-ad-stats.googlesyndication.com"
