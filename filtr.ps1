@@ -1,15 +1,4 @@
-#   Description:
-# This script blocks telemetry related domains via the hosts file and related
-# IPs via Windows Firewall.
-#
-# Please note that adding these domains may break certain software like iTunes
-# or Skype. As this issue is location dependent for some domains, they are not
-# commented by default. The domains known to cause issues marked accordingly.
-# Please see the related issue:
-# <https://github.com/W4RH4WK/Debloat-Windows-10/issues/79>
-
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
-
 Write-Output "Disabling telemetry via Group Policies"
 New-FolderForced -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" "AllowTelemetry" 0
@@ -155,9 +144,9 @@ $domains = @(
     "e3843.g.akamaiedge.net"
     "flightingserviceweurope.cloudapp.net"
     #"sls.update.microsoft.com"                 # may cause issues with Windows Updates
-    "static.ads-twitter.com"                    # may cause issues with Twitter login
+    #"static.ads-twitter.com"                    # may cause issues with Twitter login
     "www-google-analytics.l.google.com"
-    "p.static.ads-twitter.com"                  # may cause issues with Twitter login
+    #"p.static.ads-twitter.com"                  # may cause issues with Twitter login
     "hubspot.net.edge.net"
     "e9483.a.akamaiedge.net"
 
@@ -190,16 +179,16 @@ $domains = @(
 
     # moje dodatki 02:
     "adclick.g.doublecklick.net"
-    #"adeventtracker.spotify.com"
-    "ads-fa.spotify.com" #clear
-    #"analytics.spotify.com"
+    "adeventtracker.spotify.com"   #clear
+    "ads-fa.spotify.com"           #clear
+    "analytics.spotify.com"        #clear
     #"audio2.spotify.com"
     "b.scorecardresearch.com"
     "bounceexchange.com"
     "bs.serving-sys.com"
     "content.bitsontherun.com"
     "core.insightexpressai.com"
-    "crashdump.spotify.com" #clear
+    "crashdump.spotify.com"        #clear
     "d2gi7ultltnc2u.cloudfront.net"
     "d3rt1990lpmkn.cloudfront.net"
     #"desktop.spotify.com"
@@ -209,7 +198,7 @@ $domains = @(
     "googleads.g.doubleclick.net"
     "gtssl2-ocsp.geotrust.com"
     "js.moatads.com"
-    "log.spotify.com"
+    "log.spotify.com"              #clear
     "media-match.com"
     "omaze.com"
     #"open.spotify.com"
@@ -219,7 +208,7 @@ $domains = @(
     "pubads.g.doubleclick.net"
     "redirector.gvt1.com"
     "securepubads.g.doubleclick.net"
-    #"spclient.wg.spotify.com"
+    "spclient.wg.spotify.com"     #clear
     "tpc.googlesyndication.com"
     "v.jwpcdn.com"
     "video-ad-stats.googlesyndication.com"
