@@ -3381,6 +3381,7 @@ $domains = @(
 "mediacloud.casa"
 "visariomedia.com"
 "diwe.com.br"
+"bobo-maker.pl"
 
 )
 Write-Output "" | Out-File -Encoding ASCII -Append $hosts_file
